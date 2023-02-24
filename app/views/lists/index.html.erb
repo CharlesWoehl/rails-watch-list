@@ -15,6 +15,7 @@
   </div>
   <div class="cards m-3">
   <% @lists.each do |list| %>
+<%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
 
 
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.picture %>)">

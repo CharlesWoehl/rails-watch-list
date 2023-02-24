@@ -3,6 +3,7 @@
 <h2>Nouvelle liste</h2>
 <%= simple_form_for(@list) do |f| %>
   <%= f.input :name, placeholder: 'Le nom de votre liste de films' %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :picture, placeholder: 'Url de votre image de liste' %>
   <%= f.button :submit, class:"btn btn-success" %>
 <% end %>
