@@ -13,13 +13,13 @@
   <div class="cards m-3">
   <% @lists.each do |list| %>
 
-
+<% if list.photo.key? %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list.photo.key, crop: :fill %>)">
       <%= link_to list.name, list_path(list), class:"text-white" %>
       <div class="delete m-2"> <%= link_to ' |x|', list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"text-decoration-none text-danger" %></div>
 
     </div>
-
+<% end %>
   <% end %></div>
 
 
