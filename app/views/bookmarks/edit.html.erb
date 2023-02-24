@@ -3,7 +3,6 @@
 
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie %>
   <%= f.input :comment, placeholder: 'Entrez un commentaire sur le film' %>
   <%= f.button :submit, class:"btn btn-success" %>
 <% end %>

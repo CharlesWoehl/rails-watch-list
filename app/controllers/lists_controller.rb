@@ -28,10 +28,16 @@ class ListsController < ApplicationController
     redirect_to list_path(@list)
   end
 
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to root_path, status: :see_other
+  end
+
   private
 
   def list_params
-    params.require(:list).permit(:name, :picture, :id, :movie, :movie_id, :comment, :photo, :bookmark, :bookmark_id, :list_id, :list, :bookmarks, :bookmarks_id)
+    params.require(:list).permit(:name, :picture, :id, :movie, :movie_id, :comment, :photo, :bookmark, :bookmark_id, :list_id, :list, :bookmarks, :bookmarks_id, :photo, :key)
   end
 
 end

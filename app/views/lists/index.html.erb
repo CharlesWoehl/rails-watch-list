@@ -6,20 +6,18 @@
 </div>
 
 
-
-
-
 <div class="container">
   <div class="card col-3 justify-content-right m-4">
   <%= link_to 'Create a Movie List', new_list_path, class:"btn btn-success" %>
   </div>
   <div class="cards m-3">
   <% @lists.each do |list| %>
-<%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
 
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.picture %>)">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list.photo.key, crop: :fill %>)">
       <%= link_to list.name, list_path(list), class:"text-white" %>
+      <div class="delete m-2"> <%= link_to ' |x|', list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"text-decoration-none text-danger" %></div>
+
     </div>
 
   <% end %></div>

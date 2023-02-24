@@ -26,11 +26,8 @@ class BookmarksController < ApplicationController
   end
 
   def update
-    @list = List.find(params[:list_id])
     @bookmark = Bookmark.find(params[:id])
     @bookmark.update(bookmark_params)
-    @bookmark.save
-    @bookmark.list = @list
     @bookmark.save
     redirect_to root_path
   end

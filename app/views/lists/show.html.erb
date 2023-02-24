@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.picture %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @list.photo.key, crop: :fill %>);">
   <div class="container">
 <h1>Mes films <b><%= @list.name %></b></h1>
 
@@ -36,7 +36,7 @@
       <div class="fst-italic"><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %></div>
       <div class="d-flex" style="gap:10px">
       <div class="delete"> <%= link_to 'delete', bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"text-decoration-none text-danger" %></div>
-      <div class="delete"> <%= link_to 'edit', edit_list_bookmark_path(@list.id, bookmark.id), class:"text-decoration-none text-success" %></div>
+      <div class="delete"> <%= link_to 'edit', edit_bookmark_path(bookmark.id), class:"text-decoration-none text-success" %></div>
       </div>
       </div>
  </div>
