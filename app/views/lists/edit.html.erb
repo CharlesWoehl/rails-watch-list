@@ -1,6 +1,7 @@
 <div class="container p-4 col-6">
+<h2>Editer la liste</h2>
 
-<h2>Nouvelle liste</h2>
+
 <%= simple_form_for(@list) do |f| %>
   <%= f.input :name, placeholder: 'Le nom de votre liste de films' %>
   <%= f.input :picture, placeholder: 'Url de votre image de liste' %>

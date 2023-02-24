@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.gl-events-projectdesigner.com/sites/default/files/uploads/Pages/batiment-temporaire/cinema/salle-de-cinema-2.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.arts-in-the-city.com/wp-content/uploads/2020/04/drive-in-cinema-confinement-.jpg);">
   <div class="container">
 <h1>Mes listes de films</h1>
 
@@ -10,15 +10,18 @@
 
 
 <div class="container">
+  <div class="card col-3 justify-content-right m-4">
+  <%= link_to 'Create a Movie List', new_list_path, class:"btn btn-success" %>
+  </div>
   <div class="cards m-3">
   <% @lists.each do |list| %>
 
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.picture %>)">
       <%= link_to list.name, list_path(list), class:"text-white" %>
     </div>
 
   <% end %></div>
-            <%= link_to 'Create a Movie List', new_list_path, class: "nav-link" %>
+
 
 </div>

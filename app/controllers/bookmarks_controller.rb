@@ -21,9 +21,23 @@ class BookmarksController < ApplicationController
     redirect_to list_path(list), status: :see_other
   end
 
+  def edit
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def update
+    @list = List.find(params[:list_id])
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.update(bookmark_params)
+    @bookmark.save
+    @bookmark.list = @list
+    @bookmark.save
+    redirect_to root_path
+  end
+
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id)
+    params.require(:bookmark).permit(:comment, :movie_id, :list_id, :id, :movie, :list, :bookmarks, :bookmarks_id)
   end
 end
